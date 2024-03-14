@@ -1,4 +1,5 @@
 <?php
+$_SESSION['login'] = true;
 include 'config/koneksi.php';
 $failed_message = "";
 
@@ -19,7 +20,7 @@ if (isset($_POST['btn_login'])) {
       echo
       "<script> 
       alert ('Login berhasil');
-      location.href='suratkeluar.php';
+      location.href='suratmasuk.php';
       </script>";
     } else {
       echo "<script>alert('Email atau password Anda salah. Silakan coba lagi!')</script>";

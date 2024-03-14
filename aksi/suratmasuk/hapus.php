@@ -8,7 +8,7 @@ if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
     // Buat query untuk menghapus data surat berdasarkan id
-    $query = "DELETE FROM suratkeluar WHERE id='$id'";
+    $query = "DELETE FROM suratmasuk WHERE id='$id'";
     
     // Eksekusi query
     $result = mysqli_query($link, $query);
@@ -16,7 +16,7 @@ if (isset($_GET['id'])) {
     // Periksa apakah penghapusan berhasil
     if ($result) {
         // Redirect kembali ke halaman utama setelah penghapusan berhasil
-        header('Location: ../../suratkeluar.php');
+        header('Location: ../../suratmasuk.php');
         exit;
     } else {
         // Jika gagal menghapus, tampilkan pesan error
