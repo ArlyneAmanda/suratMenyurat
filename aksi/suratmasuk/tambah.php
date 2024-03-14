@@ -40,7 +40,10 @@
                     // Eksekusi query
                     $query = mysqli_query($link, $sql);
                     if ($query) {
-                        header('location:../../suratmasuk.php');
+                        echo " <script> 
+                        alert ('data berhasil ditambah');
+                        location.href='../../suratmasuk.php';
+                        </script>";
                     } else {
                         echo "Gagal menambahkan data. Mohon coba lagi.";
                     }
@@ -52,7 +55,9 @@
             }
         }
         ?>
-
+<script>
+    
+</script>
         <h1 class="mb-3">Tambah Surat Masuk</h1>
         <!-- Form tambah surat -->
         <form action="" method="POST" enctype="multipart/form-data">
