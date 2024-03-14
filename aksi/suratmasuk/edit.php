@@ -21,7 +21,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Pindahkan file yang diupload ke direktori yang ditentukan
         if (move_uploaded_file($_FILES["file_surat"]["tmp_name"], $target_file)) {
             // Query untuk mengupdate data surat dengan file surat
-            $sql = "UPDATE suratmasuk SET no_surat='$no_surat', tanggal_surat='$tanggal_surat', tanggal_masuk='$tanggal_masuk', asal_surat='$asal_surat', perihal='$perihal', file_surat='" . basename($_FILES["file_surat"]["name"]) . "' WHERE id='$id'";
+            $sql = "UPDATE suratmasuk SET
+             no_surat='$no_surat', tanggal_surat='$tanggal_surat', tanggal_masuk='$tanggal_masuk', asal_surat='$asal_surat', perihal='$perihal', file_surat='" . basename($_FILES["file_surat"]["name"]) . "' WHERE id='$id'";
         } else {
             echo "Gagal mengunggah file.";
             exit(); // Berhenti eksekusi script
@@ -70,28 +71,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="hidden" name="id" value="<?php echo $data['id']; ?>">
             <div class="form-group">
                 <label for="no_surat">Nomor Surat:</label>
-                <input type="text" class="form-control" id="no_surat" name="no_surat" value="<?php echo $data['no_surat']; ?>" required>
+                <input type="text" class="form-control" id="no_surat" name="no_surat"
+                    value="<?php echo $data['no_surat']; ?>" required>
             </div>
             <div class="form-group">
                 <label for="tanggal_surat">Tanggal Surat:</label>
-                <input type="date" class="form-control" id="tanggal_surat" name="tanggal_surat" value="<?php echo $data['tanggal_surat']; ?>" required>
+                <input type="date" class="form-control" id="tanggal_surat" name="tanggal_surat"
+                    value="<?php echo $data['tanggal_surat']; ?>" required>
             </div>
             <div class="form-group">
                 <label for="tanggal_masuk">Tanggal Masuk:</label>
-                <input type="date" class="form-control" id="tanggal_masuk" name="tanggal_masuk" value="<?php echo $data['tanggal_masuk']; ?>" required>
+                <input type="date" class="form-control" id="tanggal_masuk" name="tanggal_masuk"
+                    value="<?php echo $data['tanggal_masuk']; ?>" required>
             </div>
             <div class="form-group">
                 <label for="asal_surat">Asal Surat:</label>
-                <input type="text" class="form-control" id="asal_surat" name="asal_surat" value="<?php echo $data['asal_surat']; ?>" required>
+                <input type="text" class="form-control" id="asal_surat" name="asal_surat"
+                    value="<?php echo $data['asal_surat']; ?>" required>
             </div>
             <div class="form-group">
                 <label for="perihal">Perihal:</label>
-                <input type="text" class="form-control" id="perihal" name="perihal" value="<?php echo $data['perihal']; ?>" required>
+                <input type="text" class="form-control" id="perihal" name="perihal"
+                    value="<?php echo $data['perihal']; ?>" required>
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label for="file_surat">File Surat:</label>
                 <input type="file" class="form-control" id="file_surat" name="file_surat">
-            </div>
+            </div> -->
             <div class="mb-5">
                 <button type="submit" class="btn btn-primary">Simpan</button>
                 <a href="../../suratmasuk.php" class="btn btn-secondary">Kembali</a>
