@@ -1,4 +1,4 @@
-<?if (!isset($_SESSION['login'])) {
+<? if (!isset($_SESSION['login'])) {
     header("Location:login.php");
 }
 ?>
@@ -12,14 +12,40 @@
     <title>Daftar Surat Masuk</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #1B1A55;
+            color: white;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .content {
+            flex: 1;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
 </head>
 
 <body>
     <?php include 'partials/sidebar.php'; ?>
-    <div class="container mt-3">
-        <h1>Daftar Surat Masuk</h1>
-        <a href="aksi/suratmasuk/tambah.php" class="btn btn-primary mb-3 mt-2">+ Tambah Surat Masuk</a>
-        <table class="table table-bordered">
+    <div class=" w-100">
+        <header class="p-3 d-flex justify-item-center gap-5">
+            Daftar Surat Masuk
+        </header>
+        <h1 class="ml-2">Daftar Surat Masuk</h1>
+        <a href="aksi/suratmasuk/tambah.php" class="btn btn-primary mb-3 mt-2 ml-2">+ Tambah Surat Masuk</a>
+        <table class="table table-bordered ">
             <thead>
                 <tr>
                     <th>No Surat</th>

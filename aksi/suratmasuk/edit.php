@@ -59,14 +59,43 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Surat Masuk</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #1B1A55;
+            color: white;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .content {
+            flex: 1;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
 </head>
 
 <body>
     <?php include '../../partials/sidebar.php'; ?>
-    <div class="container mt-3">
-        <h1 class="mb-3">Edit Surat Masuk</h1>
+    <div class="w-100">
+        <header class="p-3 d-flex justify-item-center gap-">
+            <a href="../../suratmasuk.php" class="p=0 bg=transparent mr-2">
+                <span class="text-white">&#8592;</span>
+            </a>
+            Edit Surat Masuk
+        </header>
+        <h1 class="mb-2 ml-2">Edit Surat Masuk</h1>
         <!-- Form edit surat -->
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form action="" method="POST" enctype="multipart/form-data" class="ml-2">
             <!-- Isi form di sini -->
             <input type="hidden" name="id" value="<?php echo $data['id']; ?>">
             <div class="form-group">
@@ -98,9 +127,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <label for="file_surat">File Surat:</label>
                 <input type="file" class="form-control" id="file_surat" name="file_surat">
             </div> -->
-            <div class="mb-5">
-                <button type="submit" class="btn btn-primary">Simpan</button>
-                <a href="../../suratmasuk.php" class="btn btn-secondary">Kembali</a>
+            <div class="mb-2">
+                <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                <!-- <a href="../../suratmasuk.php" class="btn btn-secondary">Kembali</a> -->
             </div>
         </form>
     </div>
