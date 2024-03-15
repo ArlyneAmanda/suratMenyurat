@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 14, 2024 at 04:23 PM
+-- Generation Time: Mar 15, 2024 at 04:56 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -24,6 +24,23 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `suratkeluar`
+--
+
+CREATE TABLE `suratkeluar` (
+  `Id` int(11) NOT NULL,
+  `No_surat` varchar(255) NOT NULL,
+  `Tanggal_surat` date NOT NULL,
+  `Tanggal_keluar` date NOT NULL,
+  `Kepada` varchar(255) NOT NULL,
+  `Perihal` varchar(255) NOT NULL,
+  `Isi_surat` text NOT NULL,
+  `File_surat` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `suratmasuk`
 --
 
@@ -36,15 +53,6 @@ CREATE TABLE `suratmasuk` (
   `perihal` varchar(255) NOT NULL,
   `file_surat` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `suratmasuk`
---
-
-INSERT INTO `suratmasuk` (`id`, `no_surat`, `tanggal_surat`, `tanggal_masuk`, `asal_surat`, `perihal`, `file_surat`) VALUES
-(1, '1', '2024-03-09', '2024-03-14', 'neper', 'danaa', 'LAPORAN UJIKOM ARLYNE 2024.pdf'),
-(3, '111', '2024-03-09', '2024-03-27', 'smandaa', 'event', 'SuratHibahL1.pdf'),
-(5, '121', '2024-03-14', '2024-03-08', 'smaju', 'penggalangan', 'INGAT.pdf');
 
 -- --------------------------------------------------------
 
@@ -74,6 +82,12 @@ INSERT INTO `user` (`user_id`, `username`, `password`, `namalengkap`) VALUES
 --
 
 --
+-- Indexes for table `suratkeluar`
+--
+ALTER TABLE `suratkeluar`
+  ADD PRIMARY KEY (`Id`);
+
+--
 -- Indexes for table `suratmasuk`
 --
 ALTER TABLE `suratmasuk`
@@ -90,10 +104,16 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `suratkeluar`
+--
+ALTER TABLE `suratkeluar`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT for table `suratmasuk`
 --
 ALTER TABLE `suratmasuk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `user`
