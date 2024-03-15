@@ -1,7 +1,7 @@
 <?php
 
 // NOTE Untuk ngerun session
-// session_start();
+session_start();
 
 $link = mysqli_connect('localhost', 'root', '', 'surat');
 

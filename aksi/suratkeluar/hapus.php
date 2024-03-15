@@ -9,9 +9,12 @@ if (isset($_GET['Id'])) {
 
     // Buat query untuk menghapus data surat berdasarkan id
     $query = "DELETE FROM suratkeluar WHERE Id='$Id'";
-    
+
     // Eksekusi query
     $result = mysqli_query($link, $query);
+
+    // unlink("../../uploads/" . $Id[$i]['File_surat']);
+    // mysqli_query($link, "DELETE FROM suratkeluar WHERE `Id` = $Id");
 
     // Periksa apakah penghapusan berhasil
     if ($result) {

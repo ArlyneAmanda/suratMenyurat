@@ -13,6 +13,9 @@ if (isset($_GET['id'])) {
     // Eksekusi query
     $result = mysqli_query($link, $query);
 
+    unlink("../../uploads/" . $Id[$i]['file_surat']);
+    mysqli_query($link, "DELETE FROM suratmasuk WHERE `id` = $id");
+
     // Periksa apakah penghapusan berhasil
     if ($result) {
         // Redirect kembali ke halaman utama setelah penghapusan berhasil

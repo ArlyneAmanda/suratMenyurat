@@ -1,3 +1,6 @@
+<?php
+include '../../config/koneksi.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,7 +39,6 @@
     <?php include '../../partials/sidebar.php'; ?>
     <div class="w-100">
         <?php
-        include '../../config/koneksi.php';
 
         // Proses penambahan data surat
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -87,9 +89,9 @@
             </a>
             Tambah Surat Masuk
         </header>
-        <h1 class="mb-2 ml-2">Tambah Surat Masuk</h1>
+        <!-- <h1 class="mb-2 ml-2">Tambah Surat Masuk</h1> -->
         <!-- Form tambah surat -->
-        <form action="" method="POST" enctype="multipart/form-data" class="ml-2">
+        <form action="" method="POST" enctype="multipart/form-data" class="ml-2 mt-2">
             <div class="form-group">
                 <label for="no_surat" class="form-label">Nomor Surat:</label>
                 <input type="text" class="form-control" id="no_surat" name="no_surat" required>

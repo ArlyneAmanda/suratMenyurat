@@ -91,9 +91,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </a>
             Edit Surat Keluar
         </header>
-        <h1 class="mb-2 mt-2 ml-2">Edit Surat Keluar</h1>
+        <!-- <h1 class="mb-2 mt-2 ml-2">Edit Surat Keluar</h1> -->
         <!-- Form edit surat -->
-        <form action="" method="POST" enctype="multipart/form-data" class="ml-2 w-95">
+        <form action="" method="POST" enctype="multipart/form-data" class="ml-2 w-95 mt-2">
             <!-- Isi form di sini -->
             <input type="hidden" name="Id" value="<?php echo isset($data['Id']) ? $data['Id'] : ''; ?>">
             <div class="form-group">

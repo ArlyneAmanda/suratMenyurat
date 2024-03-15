@@ -14,11 +14,12 @@ if (isset($_POST['btn_login'])) {
     $user_password = $data['password'];
 
     if (password_verify($password, $user_password)) {
+      $_SESSION["login"] = true;
       $_SESSION["user_id"] = $data['user_id'];
       $_SESSION["username"] = $data['username'];
       $_SESSION["namalengkap"] = $data['namalengkap'];
       echo
-      "<script> 
+        "<script> 
       alert ('Login berhasil');
       location.href='suratmasuk.php';
       </script>";
@@ -111,11 +112,13 @@ if (isset($_POST['btn_login'])) {
         <form method="POST">
           <div class="form-group">
             <label for="username">Username</label>
-            <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" required>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username"
+              required>
           </div>
           <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password"
+              required>
           </div>
           <button type="submit" name="btn_login" class="btn btn-login mb-3 w-100">Login</button>
           <div class="text-center">

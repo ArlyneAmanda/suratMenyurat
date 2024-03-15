@@ -81,9 +81,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </a>
             Tambah Surat Keluar
         </header>
-        <h1 class="mb-2 ml-2">Tambah Surat Keluar</h1>
+        <!-- <h1 class="mb-2 ml-2">Tambah Surat Keluar</h1> -->
         <!-- Form tambah surat -->
-        <form action="" method="POST" enctype="multipart/form-data" class="ml-2">
+        <form action="" method="POST" enctype="multipart/form-data" class="ml-2 mt-2">
             <!-- Isi form di sini -->
             <div class="form-group">
                 <label for="No_surat" class="form-label">Nomor Surat :</label>
